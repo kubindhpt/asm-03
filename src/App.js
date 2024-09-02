@@ -1,24 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Suspense } from "react";
+import { Route, Routes } from "react-router-dom";
+
+import "./App.css";
+import LayOut from "./components/UI/LayOut/LayOut";
+import LoadingSpinner from "./components/UI/LoadingSpinner/LoadingSpinner";
+
+const HomePage = React.lazy(() => import("./pages/Home/HomePage"));
+const ShopPage = React.lazy(() => import("./pages/Shop/ShopPage"));
+const DetailPage = React.lazy(() => import("./pages/Detail/DetailPage"));
+const CartPage = React.lazy(() => import("./pages/Cart/CartPage"));
+const CheckOutPage = React.lazy(() => import("./pages/CheckOut/CheckOutPage"));
+const LoginPage = React.lazy(() => import("./pages/Login/LoginPage"));
+const RegisterPage = React.lazy(() => import("./pages/Register/RegisterPage"));
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <LayOut className="App">
+      <Suspense
+        fallback={
+          <div className="centered">
+            <LoadingSpinner />
+          </div>
+        }
+      >
+        <main>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/shop" element={<ShopPage />} />
+            <Route path="/detail/:productId" element={<DetailPage />} />
+            <Route path="/cart" element={<CartPage />} />
+            <Route path="/checkout" element={<CheckOutPage />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/register" element={<RegisterPage />} />
+          </Routes>
+        </main>
+      </Suspense>
+    </LayOut>
   );
 }
 
