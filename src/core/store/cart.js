@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { saveToStorage, getFromStorage } from "../lib/storage";
+import { saveToStorage, getFromStorage } from "../lib/storage.js";
 
 // Lấy dữ liệu currentUser,userArr từ localStorage
 const userArr = getFromStorage("userArr") ? getFromStorage("userArr") : [];
@@ -112,7 +112,7 @@ const cartSlice = createSlice({
       // Tính lại giá trị total
       const updatedTotalAmount = updatedListCart
         .map((item) => Number(item.price) * item.amount)
-        .reduce((total, currentVal) => total + currentVal);
+        .reduce((total, currentVal) => total + currentVal,0);
       return {
         listCart: updatedListCart,
         totalAmount: updatedTotalAmount,

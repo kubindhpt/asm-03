@@ -1,8 +1,6 @@
-import React from "react";
 import { Fragment } from "react";
-import ReactDOM from "react-dom";
-
 import styles from "./Modal.module.css";
+import ReactDOM from "react-dom";
 
 const Backdrop = (props) => {
   return <div className={styles.backdrop} onClick={props.onClose}></div>;
@@ -32,5 +30,4 @@ const Modal = (props) => {
     </Fragment>
   );
 };
-
 export default Modal;

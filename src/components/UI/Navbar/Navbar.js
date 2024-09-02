@@ -71,8 +71,10 @@ const Navbar = () => {
         )}
         {isLogin && (
           <li>
-            <FontAwesomeIcon icon={faUser} className={styles.icon} />
-            <span>{currentUser.name}▼</span>
+            <span>
+              <FontAwesomeIcon icon={faUser} className={styles.icon} />
+              {currentUser.name}▼
+            </span>
             <span onClick={logoutHandler}>(Logout)</span>
           </li>
         )}

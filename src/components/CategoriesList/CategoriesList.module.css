@@ -1,0 +1,26 @@
+.container {
+  width: 25%;
+  font-style: italic;
+}
+
+.container h3,
+.container p {
+  padding-left: 1rem;
+}
+
+.container p:hover,
+.container p:active {
+  color: rgba(234, 200, 103, 255);
+  cursor: pointer;
+}
+
+.categoryTitle h3 {
+  padding: 10px;
+  color: white;
+  background-color: black;
+}
+
+.categoryItem h3 {
+  padding: 10px;
+  background-color: rgba(246, 249, 246, 255);
+}

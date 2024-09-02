@@ -20,14 +20,20 @@
   color: #000;
 }
 
+.container .icon {
+  margin-right: 5px;
+  padding-bottom: 2px;
+}
+
 .container a:hover,
-.container a:active,
+.container a.active,
 .container span:hover {
   color: rgba(234, 200, 103, 255);
   cursor: pointer;
 }
 
-.container span:hover .icon {
+.container div span:hover .icon:hover,
+.container div span.icon:hover {
   color: gray;
-  margin-right: 0.2rem;
+  margin-right: 5px;
 }

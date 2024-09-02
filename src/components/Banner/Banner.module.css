@@ -1,5 +1,5 @@
 .container {
-  background-image: url("../../assets/Images/banner1.jpg");
+  background-image: url("../../../public/Images/banner1.jpg");
   background-size: cover;
   padding: 10% 5%;
 }

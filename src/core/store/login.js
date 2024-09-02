@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { deleteFromStorage, getFromStorage } from "../lib/storage";
+import { deleteFromStorage, getFromStorage } from "../lib/storage.js";
 
 // Kiểm tra dữ liệu currentUser xem có đăng nhập chưa
 const currentUser = getFromStorage("currentUser")
